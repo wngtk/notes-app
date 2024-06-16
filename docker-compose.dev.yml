@@ -1,0 +1,20 @@
+services:
+  frontend:
+    image: notes-frontend-dev
+    volumes:
+      - ./frontend:/usr/src/app
+  
+  backend:
+    image: notes-backend-dev
+    volumes:
+      - ./backend:/usr/src/app
+  
+  nginx:
+    image: nginx:1.20.1
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
