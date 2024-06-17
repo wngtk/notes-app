@@ -9,7 +9,7 @@
 
 `docker-compose.dev.yml` 可以一键启动前后端的开发环境。但是还有一些不足之处：
 
-- MongoDB 没有使用 Docker 容器，使用的是之前开发的时候用的在线的 MongoDB 服务
+- MongoDB 没有使用 Docker 容器，使用的是之前开发的时候用的在线的 MongoDB 服务 （后端的正常工作需要在 `.env` 中指定 `MONGODB_URL`）
 - MongoDB URL 的设置没有通过 `docker-compose.dev.yml` 的环境变量(docker compose 也可以使用 .env 文件的)
 - 没有支持 `docker compose up --build`，也就是说在 docker compose 之前我必须已经构建了需要的镜像
 
